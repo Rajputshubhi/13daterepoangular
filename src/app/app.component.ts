@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginserviceService } from './services/loginservice.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'First Project Angular ';
-  showdata:any;
-  getdata(data:any){
-     console.log(data)
-     this.showdata=data
+  // showdata:any;
+  // getdata(data:any){
+  //    console.log(data)
+  //    this.showdata=data;
+  // }
+  constructor(private login:LoginserviceService){
+
+  }
+  
+  postData(data:any){
+      console.log(data)
+      this.login.LoginUserServices(data)
   }
 }
