@@ -1,6 +1,10 @@
 <h1>{{title}}</h1>
-<input type="text" placeholder="enter your name" #inputdata/>
-
-<button (click)="getdata(inputdata.value)">Submit</button>
-
-<p>{{showdata}}</p>
+ <form #postdata="ngForm" (ngSubmit)="postData(postdata.value)">
+    <input type="text" ngModel placeholder="enter your email" name="email" />
+    <br />
+    <br />
+    <input type="text" ngModel placeholder="password" name="password" />
+    <br /><br />  
+    <button>Submit</button>
+ </form>
+<!-- <p>{{showdata}}</p> -->
