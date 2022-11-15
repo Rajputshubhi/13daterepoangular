@@ -16,9 +16,15 @@ export class AppComponent {
   constructor(private login:LoginserviceService){
 
   }
-  
   postData(data:any){
       console.log(data)
-      this.login.LoginUserServices(data)
+      this.login.LoginUserServices(data).subscribe((res)=>{
+           console.log(res)
+      })
+  }
+  logoutdata(){
+     this.login.Logoutpagedatservice().subscribe((resp)=>{
+         console.log(resp)
+     })
   }
 }
